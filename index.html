@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            width: 320px;
+        }
+        .container {
+            background-color: black;
+            padding: 2px;
+            border: 2px solid;
+            width: 300px;
+            border-radius: 15px;
+        }
+
+        .calculator input {
+            background-color: orange;
+            text-align: right;
+            border: 2px solid;
+            border-radius: 10px;
+            width: 280px;
+            height: 70px;
+            margin: 5px;
+            margin-top: 15px;
+            font-size: xx-large;
+        }
+
+        .opps {
+            margin: 10px;
+            width: 290px;
+            height: 280px;
+            border-radius: 15px;
+            /* border: 1px solid; */
+            /* border-radius: 15px; */
+        }
+
+        .opps input {
+            margin: 0;
+            border-radius: 15px;
+            padding: 10px 25px;
+            background: transparent;
+        }
+
+        #AC {
+            padding: 18px 24px;
+            background-color: aqua;
+        }
+
+        #Del {
+            padding: 18px 23px;
+            background-color: aqua;
+        }
+
+        #slash {
+            padding: 18px 27px;
+            background-color: aqua;
+        }
+
+        #mul {
+            padding: 18px 28px;
+            background-color: aqua;
+        }
+
+        #seven {
+            padding: 18px 29px;
+            background-color: aqua;
+        }
+
+        #eight {
+            padding: 18px 29px;
+            background-color: aqua;
+        }
+
+        #nine {
+            padding: 18px 26px;
+            background-color: aqua;
+        }
+
+        #minus {
+            padding: 18px 28px;
+            background-color: aqua;
+        }
+
+        #four {
+            padding: 18px 29px;
+            background-color: aqua;
+        }
+
+        #five {
+            padding: 18px 28px;
+            background-color: aqua;
+        }
+
+        #six {
+            padding: 18px 27px;
+            background-color: aqua;
+        }
+
+        #plus {
+            padding: 18px 26px;
+            background-color: aqua;
+        }
+
+        #one {
+            padding: 18px 30px;
+            background-color: aqua;
+        }
+
+        #two {
+            padding: 18px 27px;
+            background-color: aqua;
+        }
+
+        #three {
+            padding: 18px 27px;
+            background-color: aqua;
+        }
+
+        #zero {
+            padding: 16px 62px;
+            font-size: 20px;
+            background-color: aqua;
+        }
+
+        #dot {
+            padding: 16px 28px;
+            font-size: 20px;
+            font-size: bold;
+            background-color: aqua;
+        }
+
+        #equal {
+            margin-right: 5px;
+            padding: 47px 26px;
+            background-color: aqua;
+        }
+
+        .onetodot {
+            width: 280px;
+            display: flex;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="calculator">
+                <input type="text" name="display">
+            </div>
+            <div class="opps">
+                <div>
+                    <input id="AC" type="button" value="AC" onclick="display.value=''">
+                    <!-- (.toString() is exceptional) try without it first, if output is not happening then add it -->
+
+                     <!-- example x = "Hello World"
+                        string.slice(start,end), if we give (0,1) it prints H(default),
+                        but if we give (o,6) it prints "Hello W"  
+                        but for button in calculator (o,-1) it deletes 1 number,
+                        if (0,-2) it delets 2 numbers 
+                    -->
+                    <input id="Del" type="button" value="Del" onclick="display.value=display.value.toString(display.value).slice(0,-1)">
+                    <input id="slash" type="button" value="/" onclick="display.value += '/'">
+                    <input id="mul" type="button" value="*" onclick="display.value += '*'">
+                </div>
+                <div>
+                    <input id="seven" type="button" value="7" onclick="display.value += '7'">
+                    <input id="eight" type="button" value="8" onclick="display.value += '8'">
+                    <input id="nine" type="button" value="9" onclick="display.value += '9'">
+                    <input id="minus" type="button" value="-" onclick="display.value += '-'">
+                </div>
+                <div>
+                    <input id="four" type="button" value="4" onclick="display.value += '4'">
+                    <input id="five" type="button" value="5" onclick="display.value += '5'">
+                    <input id="six" type="button" value="6" onclick="display.value += '6'">
+                    <input id="plus" type="button" value="+" onclick="display.value += '+'">
+                </div>
+                <div class="onetodot">
+                    <div>
+                        <input id="one" type="button" value="1" onclick="display.value += '1'">
+                        <input id="two" type="button" value="2" onclick="display.value += '2'">
+                        <input id="three" type="button" value="3" onclick="display.value += '3'">
+                        <input id="zero" type="button" value="0" onclick="display.value += '0'">
+                        <input id="dot" type="button" value="." onclick="display.value += '.'">
+                    </div>
+                    <div>
+                        <input id="equal" type="button" value="=" onclick="display.value=eval(display.value)">
+                    </div>
+                </div>
+        </form>
+    </div>
+    </div>
+
+</body>
+
+</html>
